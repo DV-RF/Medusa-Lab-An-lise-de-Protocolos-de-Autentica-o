@@ -1,4 +1,3 @@
-# Medusa - Lab - APA
 # 🚀 Medusa Lab: Análise de Protocolos de Autenticação
 
 Este repositório documenta a execução de um projeto prático para o bootcamp de Cibersegurança da [DIO](https://www.dio.me/).
