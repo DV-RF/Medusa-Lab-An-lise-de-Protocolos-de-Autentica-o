@@ -61,6 +61,7 @@ Em seguida, um scan `nmap` foi realizado a partir do Kali Linux para identificar
 
 # Scan de portas e serviços
 `nmap -sV -p 21,22,80,139,445 192.168.56.101`
+
 O nmap confirmou os seguintes serviços vulneráveis:
 
 Porta 21: FTP (vsftpd 2.3.4)
