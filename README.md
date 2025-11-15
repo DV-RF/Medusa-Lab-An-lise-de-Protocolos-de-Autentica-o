@@ -61,7 +61,7 @@ Porta 80: HTTP (Apache httpd 2.2.8)
 
 Porta 139/445: SMB (Samba smbd 3.x - 4.x)
 
-(Evidência: Maquinas conectadas e portas disponiveis.PNG)
+![Scan Nmap e Portas](images/Maquinas conectadas e portas disponiveis.PNG)
 
 Fase 2: Cenário de Ataque ao SMB (Samba)
 O serviço SMB foi escolhido como um dos vetores de ataque.
@@ -104,11 +104,23 @@ Validação: O acesso foi validado manualmente, realizando o login no painel DVW
 
 (Evidência: Acesso Dvwa concluido com sucesso.PNG)
 
-Fase 4: Verificação Manual de FTP
-Para completar a análise dos serviços, foi realizado um teste manual de login no serviço FTP,
-que confirmou o uso da credencial padrão msfadmin:msfadmin.
+### Fase 4: Cenário de Ataque ao FTP (vsftpd)
 
-(Evidência: Acesso manual bem sucedido.PNG)
+Finalmente, o serviço FTP (porta 21) foi atacado, pois é notório por permitir credenciais fracas ou padrão.
+
+1.  **Execução (Medusa):** O Medusa foi configurado para atacar o serviço `ftp` usando listas de usuários e senhas.
+
+    ```bash
+    medusa -h 192.168.56.101 -U users.txt -P pass.txt -M ftp -t 6
+    ```
+
+2.  **Resultado:** O ataque foi bem-sucedido e encontrou a credencial padrão `msfadmin:msfadmin`.
+
+    *(Evidência: `Login e Senha encontrado com sucesso.PNG`)*
+
+3.  **Validação:** Para confirmar, um login manual foi realizado usando o cliente `ftp` padrão, validando o acesso com sucesso.
+
+    *(Evidência: `Acesso manual bem sucedido.PNG`)*
 
 🛡️ Medidas de Mitigação e Defesa
 O objetivo final de um teste de penetração é fortalecer a segurança.
