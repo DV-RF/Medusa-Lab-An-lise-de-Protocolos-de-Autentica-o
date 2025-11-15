@@ -61,7 +61,7 @@ Porta 80: HTTP (Apache httpd 2.2.8)
 
 Porta 139/445: SMB (Samba smbd 3.x - 4.x)
 
-![Scan Nmap e Portas](images/Maquinas conectadas e portas disponiveis.PNG)
+![Scan Nmap e Portas](imagens/maquinas-conectadas-portas-disponiveis.PNG)
 
 Fase 2: Cenário de Ataque ao SMB (Samba)
 O serviço SMB foi escolhido como um dos vetores de ataque.
@@ -96,7 +96,7 @@ A ferramenta testou diversas combinações de usuários e senhas.
 Resultado: O ataque foi bem-sucedido e revelou múltiplas credenciais válidas,
 incluindo admin:password, admin:admin, msfadmin:password, entre outras.
 
-(Evidência: Login e Senha Dvwa encontradas com sucesso..jpg)
+![Sucesso Medusa no DVWA](images/login-senha-dvwa-encontradas.PNG)
 
 Validação: O acesso foi validado manualmente, realizando o login no painel DVWA com as credenciais descobertas
 
